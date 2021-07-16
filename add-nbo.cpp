@@ -16,7 +16,7 @@ uint32_t read_file_to_number(const char *file)
 	}
 
 	uint8_t network_buffer[4];
-	fread(network_buffer, sizeof(uint8_t), 4, bin);
+	fread(network_buffer, 1, sizeof(uint32_t), bin);
 	uint32_t *p = reinterpret_cast<uint32_t *>(network_buffer);
 	uint32_t operand = ntohl(*p);
 
